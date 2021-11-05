@@ -227,7 +227,7 @@ das consultas.
 ## Consulta paginada e ordenada (utilizar ignorar , limitar e classificar )
 
 
-#Resumo de comandos básicos Mongo
+# Resumo de comandos básicos Mongo
 1. Base de Dados
      * Exibir existentes - `show dbs`
      * Selecionar para uso (e criar, caso não exista) - `use nome-do-database`
@@ -240,17 +240,17 @@ das consultas.
 3. Documentos
     * Inserir - `.nomedacollection.insert(documento)`
     * Consultar - `db.nomedacollection.find({selecao})`
-        ■ Igualdade - {<key>:<value>}
-        ■ Menor que - {<key>:{$lt:<value>}}
-        ■ Menor ou igual - {<key>:{$lte:<value>}}
-        ■ Maior que - {<key>:{$gt:<value>}}
-        ■ Maior ou igual - {<key>:{$gte:<value>}}
-        ■ Diferente - {<key>:{$ne:<value>}}
-        ■ AND - {<key>:<value>, <key>:<value>}
-        ■ OR - $or:[{<key>:<value>},{<key>:<value>}]
-    * Atualizar - db.nomedacollection.update({selecao}, {$set:{campos-atualizados}})
-    * Excluir - db.nomedacollection.remove({selecao})(Considerar exclusão de seleção, apenas um e todos)
-    * Projetar - db.nomedacollection.find({selecao},{<key>:1})
-    * Limitar - db.nomedacollection.find().limit(numero)
-    * "Pular" - db.nomedacollection.find().skip(numero)
-    * Ordernar - db.nomedacollection.find().sort({<key>:1})(Considerar crescente e decrescente, e combinações)
+        - Igualdade - `{<key>:<value>}`
+        - Menor que - `{<key>:{$lt:<value>}}`
+        - Menor ou igual - `{<key>:{$lte:<value>}}`
+        - Maior que - `{<key>:{$gt:<value>}}`
+        - Maior ou igual - `{<key>:{$gte:<value>}}`
+        - Diferente - `{<key>:{$ne:<value>}}`
+        - AND - `{<key>:<value>, <key>:<value>}`
+        - OR - `$or:[{<key>:<value>},{<key>:<value>}]`
+    * Atualizar - `db.nomedacollection.update({selecao}, {$set:{campos-atualizados}})`
+    * Excluir - `db.nomedacollection.remove({selecao})`(Considerar exclusão de seleção, apenas um e todos)
+    * Projetar - `db.nomedacollection.find({selecao},{<key>:1})`
+    * Limitar - `db.nomedacollection.find().limit(numero)`
+    * "Pular" - `db.nomedacollection.find().skip(numero)`
+    * Ordernar - `db.nomedacollection.find().sort({<key>:1})`(Considerar crescente e decrescente, e combinações)
