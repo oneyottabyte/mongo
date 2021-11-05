@@ -19,3 +19,121 @@ Para criar o BD, usa os comandos: <br>
 
 ``db.createCollection('Vendas')`` 
 *  Esse comando cria uma collection no BD.
+
+
+## Inserindo documentos no Banco de dados
+Para inserir documentos utilizamos a query: `$ db.getCollection("Vendas").insert()`.<br>
+
+No robo 3T isso fica mais simples. É preciso apenas inserir um documento como segue os exemplos abaixos.
+```
+{
+    "_id" : ObjectId("617d9e81d1bb62c8d7637269"),
+    "pedido" : {
+        "pizza" : "Calabresa",
+        "adicional" : "Borda de Chocolate",
+        "tamanho" : "Gigante de 12 fatias",
+        "atendente" : "Daniel"
+    },
+    "cliente" : {
+        "nome" : "Dorian Vieira",
+        "endereco" : "Avenida Elefante Albino 25",
+        "telefone" : "(48) 99186-9704"
+    },
+    "obs" : "pagamento em dinheiro",
+    "dataHora" : ISODate("2021-11-02T22:00:00.000Z")
+}
+```
+
+```
+{
+    "_id" : ObjectId("617d9e81d1bb62b8d8633278"),
+    "pedido" : {
+        "pizza" : "Marguerita",
+        "adicional" : "Borda de Catupiry",
+        "tamanho" : "Gigante de 12 fatias",
+        "atendente" : "Daniel"
+    },
+    "cliente" : {
+        "nome" : "Gabriel Jesus",
+        "endereco" : "Avenida Macaco Preto 25",
+        "telefone" : "(48) 98825-3014"
+    },
+    "obs" : "pagamento em dinheiro",
+    "dataHora" : ISODate("2021-11-02T22:15:00.000Z")
+}
+```
+```
+{
+    "_id" : ObjectId("617d9eeb6154d40c4c0c59c7"),
+    "pedido" : {
+        "pizza" : "Frango com Catupiry",
+        "adicional" : "Borda de Cheddar",
+        "tamanho" : "Gigante de 12 fatias",
+        "atendente" : "Daniel"
+    },
+    "cliente" : {
+        "nome" : "Firmino",
+        "endereco" : "Avenida Tigre amarelo 25",
+        "telefone" : "(48) 99186-8964"
+    },
+    "obs" : "pagamento em dinheiro",
+    "dataHora" : ISODate("2021-11-02T22:30:00.000Z")
+}
+```
+```
+{
+    "_id" : ObjectId("617d9ef86154d40c4c0c59d0"),
+    "pedido" : {
+        "pizza" : "Frango com Milho",
+        "adicional" : "Borda de Cheddar",
+        "tamanho" : "Pequena 6 Fatias",
+        "atendente" : "Daniel"
+    },
+    "cliente" : {
+        "nome" : "Richarlison",
+        "endereco" : "Avenida Lobo Cinza 85",
+        "telefone" : "(48) 99858-6365"
+    },
+    "obs" : "pagamento em dinheiro",
+    "dataHora" : ISODate("2021-11-02T21:30:00.000Z")
+}
+```
+```
+{
+    "_id" : ObjectId("617d9e81d1bb62c8d7698765"),
+    "pedido" : {
+        "pizza" : "Frango com Catupiry",
+        "adicional" : "Borda de Chocolate",
+        "tamanho" : "Gigante de 12 fatias",
+        "atendente" : "Daniel"
+    },
+    "cliente" : {
+        "nome" : "Dorian Vieira",
+        "endereco" : "Avenida Elefante Albino 25",
+        "telefone" : "(48) 99186-9704"
+    },
+    "obs" : "pagamento em dinheiro",
+    "dataHora" : ISODate("2021-11-01T22:00:00.000Z")
+}
+```
+
+```
+{
+    "_id" : ObjectId("617d9e81d1bb62c8d7632556"),
+    "pedido" : {
+        "pizza" : "Calabresa",
+        "adicional" : "Borda de Chocolate",
+        "tamanho" : "Gigante de 12 fatias",
+        "atendente" : "Daniel"
+    },
+    "cliente" : {
+        "nome" : "Junior",
+        "endereco" : "Rua Donkey 25",
+        "telefone" : "(48) 99186-8495"
+    },
+    "obs" : "pagamento em dinheiro",
+    "dataHora" : ISODate("2021-11-02T22:00:00.000Z")
+}
+```
+<br>
+Apos isso no robo 3T nosso BD fica assim:
