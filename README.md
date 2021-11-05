@@ -1,9 +1,14 @@
+<h1 align="center">
+    <img  width=500 src="https://user-images.githubusercontent.com/59287246/140565692-195a2c53-fa72-4cb9-815a-c1737830753e.png"/>
+</h1>
 
 <h1 align="center">Praticando mongoDB</h1>
 <h3 align="center">Um pequeno desafio com mongoDB</h3>
 
 ## Atividade MongoDB
-Você deve criar um banco de dados novo (database) e uma coleção com um nome pertinente, de acordo com os dados e tema que você escolher. Os seguintes comandos devem ser feitos e entregues:
+Você deve criar um banco de dados novo (database) e uma coleção com um nome pertinente, de acordo com os dados e tema que você escolher. <br>
+Os seguintes comandos devem ser feitos e entregues:
+<br>
 * Inserção de documentos
 * Atualização de documentos
 * Exclusão de documentos
@@ -192,9 +197,21 @@ Utilizando esse modelo acima atualizei os documentos com o campo valor.
 ![image](https://user-images.githubusercontent.com/59287246/140562402-32560039-8d86-4b46-ae59-4abde257933c.png)
 
 ## Excluido documentos
-A query para excluir documentos é:
+Para excluir um documento pelo Robo 3T basta clicar em cima dele com o botão direito e escolher a opção Delete Document.<br>
+Podemos também usar o comando `db.getCollection('Vendas').remove({selecao})`, onde "selecao" é a condição que você quer passar para a deleção.  
+<br>
+Exemplo:<br>
 `db.getCollection('Vendas').remove({ "_id" : ObjectId("617d9e81d1bb62c8d7698765") });`
 <br>
-Essa query acima remove pelo id todo o objeto como mostra a imagem abaixo
+Essa query acima remove pelo id todo o objeto como mostra a imagem abaixo.
 ![image](https://user-images.githubusercontent.com/59287246/140564804-18c95346-1ed4-4025-b3cb-952f24122334.png)
+<br>
+Se for preciso deletar apenas um único registro nessa condição podemos fazer essa remoção dessa forma:
+`db.Vendas.remove({"valor": 100},{justOne: true})`
+![image](https://user-images.githubusercontent.com/59287246/140567737-346e803d-2863-4191-b74c-9b72088e3175.png)
 
+## Consulta com projeção
+
+## Consulta utilizando combinação entre os seletores
+
+## Consulta paginada e ordenada (utilizar ignorar , limitar e classificar )
