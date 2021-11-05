@@ -211,7 +211,46 @@ Se for preciso deletar apenas um único registro nessa condição podemos fazer 
 ![image](https://user-images.githubusercontent.com/59287246/140567737-346e803d-2863-4191-b74c-9b72088e3175.png)
 
 ## Consulta com projeção
+Caso eu queira buscar todos os documentos, porém a única informação que quero que
+retorne seja as pizzas vendidas podemos utilizar a seguinte query:
+`db.getCollection('Vendas').find({},{"pedido.pizza":1, "_id":0})`
+<br>
+Nesse caso utilizamos o número 1 para informar que queremos que esse atributo velha no
+resultado, porém utilizamos o número 0informando que não queremos que apareça no
+resultado da busca. Então na nossa listagem somente virá retornando o atributo pizza
+das consultas.
+
+![image](https://user-images.githubusercontent.com/59287246/140568398-28881dd4-0826-4349-aa73-8b6ee425aee8.png)
 
 ## Consulta utilizando combinação entre os seletores
 
 ## Consulta paginada e ordenada (utilizar ignorar , limitar e classificar )
+
+
+#Resumo de comandos básicos Mongo
+1. Base de Dados
+     * Exibir existentes - `show dbs`
+     * Selecionar para uso (e criar, caso não exista) - `use nome-do-database`
+     * Excluir base selecionada - `db.dropDatabase()`
+2. Coleção
+    * Criar coleção de documentos - `db.createCollection('nome-da-collection')`(Mongo é case sensitive)
+    * Exibir todas as coleções - `show collections`
+    * Apagar coleção de documentos - `db.nomedacollection.drop()`
+  
+3. Documentos
+    * Inserir - `.nomedacollection.insert(documento)`
+    * Consultar - `db.nomedacollection.find({selecao})`
+        ■ Igualdade - {<key>:<value>}
+        ■ Menor que - {<key>:{$lt:<value>}}
+        ■ Menor ou igual - {<key>:{$lte:<value>}}
+        ■ Maior que - {<key>:{$gt:<value>}}
+        ■ Maior ou igual - {<key>:{$gte:<value>}}
+        ■ Diferente - {<key>:{$ne:<value>}}
+        ■ AND - {<key>:<value>, <key>:<value>}
+        ■ OR - $or:[{<key>:<value>},{<key>:<value>}]
+    * Atualizar - db.nomedacollection.update({selecao}, {$set:{campos-atualizados}})
+    * Excluir - db.nomedacollection.remove({selecao})(Considerar exclusão de seleção, apenas um e todos)
+    * Projetar - db.nomedacollection.find({selecao},{<key>:1})
+    * Limitar - db.nomedacollection.find().limit(numero)
+    * "Pular" - db.nomedacollection.find().skip(numero)
+    * Ordernar - db.nomedacollection.find().sort({<key>:1})(Considerar crescente e decrescente, e combinações)
