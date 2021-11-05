@@ -5,7 +5,7 @@
 <h1 align="center">Praticando mongoDB</h1>
 <h3 align="center">Um pequeno desafio com mongoDB</h3>
 
-## Atividade MongoDB
+## :pencil2: Atividade MongoDB
 Você deve criar um banco de dados novo (database) e uma coleção com um nome pertinente, de acordo com os dados e tema que você escolher. <br>
 Os seguintes comandos devem ser feitos e entregues:
 <br>
@@ -16,7 +16,7 @@ Os seguintes comandos devem ser feitos e entregues:
 * Consulta utilizando combinação entre os seletores
 * Consulta paginada e ordenada (utilizar ignorar , limitar e classificar )
 
-## Criando o banco de dados 
+## :floppy_disk: Criando o banco de dados 
 Para criar o banco de dados, usamos o comando: <br>
 
 ``use bells`` 
@@ -26,7 +26,7 @@ Para criar o banco de dados, usamos o comando: <br>
 *  Esse comando cria uma collection no BD.
 
 
-## Inserindo documentos no Banco de dados
+## :white_check_mark: Inserindo documentos no Banco de dados
 Para inserir documentos utilizamos a query: `db.getCollection("Vendas").insert()`.
 <br>
 
@@ -152,7 +152,7 @@ Apos isso no robo 3T nosso BD fica assim:
 
 <br> 
 
-## Atualizando alguns documentos
+## :arrows_clockwise: Atualizando alguns documentos
 Para fazer o Update dos documentos utilizamos a query abaixo:
 ```
 db.getCollection('Vendas').update(
@@ -207,7 +207,8 @@ Utilizando esse modelo acima atualizei os documentos com o campo valor.
 ![image](https://user-images.githubusercontent.com/59287246/140562402-32560039-8d86-4b46-ae59-4abde257933c.png)
 
 <br> 
-## Excluido documentos
+
+## :x: Excluido documentos
 Para excluir um documento pelo Robo 3T basta clicar em cima dele com o botão direito e escolher a opção Delete Document.<br>
 Podemos também usar o comando `db.getCollection('Vendas').remove({selecao})`, onde "selecao" é a condição que você quer passar para a deleção.  
 <br>
@@ -226,7 +227,8 @@ Se for preciso deletar apenas um único registro nessa condição podemos fazer 
 ![image](https://user-images.githubusercontent.com/59287246/140567737-346e803d-2863-4191-b74c-9b72088e3175.png)
 
 <br>
-## Consulta com projeção
+
+## :mag_right: Consulta com projeção
 Caso eu queira buscar todos os documentos, porém a única informação que quero que
 retorne seja as pizzas vendidas podemos utilizar a seguinte query:
 `db.getCollection('Vendas').find({},{"pedido.pizza":1, "_id":0})`
@@ -240,7 +242,8 @@ das consultas.
 ![image](https://user-images.githubusercontent.com/59287246/140568398-28881dd4-0826-4349-aa73-8b6ee425aee8.png)
 
 <br>
-## Consulta utilizando combinação entre os seletores
+
+## :mag_right: Consulta utilizando combinação entre os seletores
 Se eu quiser saber quantas vezes certo cliente da pizzaria Bells pediu um sabor de pizza posso utilizar a seguinte query: <br>
 `db.getCollection('Vendas').find({$and:[{"cliente.nome":/.*Dorian.*/ },{"pedido.pizza":/.*Calabresa.*/}]})`
 O comando acima retorna quantas vezes o cliente Dorian comeu Pizza de calabresa, que no caso foi só uma.
@@ -250,7 +253,7 @@ O comando acima retorna quantas vezes o cliente Dorian comeu Pizza de calabresa,
 
 <br>
 
-## Consulta paginada e ordenada (utilizando ignorar , limitar e classificar )
+## :mag_right: Consulta paginada e ordenada (utilizando ignorar , limitar e classificar )
 Para limitar a quantidade de documentos que vão aparecer nessa consulta, usamos:`.limit()` <br> 
 Para retornar as vendas mas ignorar alguns registros da lista, usamos: `.skip()` <br> 
 Para classificar usamos: `.sort()` <br> 
@@ -263,17 +266,16 @@ Veja o exemplo abaixo
 ![image](https://user-images.githubusercontent.com/59287246/140572680-cc765d8c-5538-487e-817a-a2e6f806cd0b.png)
 
 <br><br>
-# Resumo de comandos básicos Mongo
+
+# :books: Resumo de comandos básicos Mongo
 1. Base de Dados
      * Exibir existentes - `show dbs`
      * Selecionar para uso (e criar, caso não exista) - `use nome-do-database`
      * Excluir base selecionada - `db.dropDatabase()`
-  <br>
 2. Coleção
     * Criar coleção de documentos - `db.createCollection('nome-da-collection')`(Mongo é case sensitive)
     * Exibir todas as coleções - `show collections`
     * Apagar coleção de documentos - `db.nomedacollection.drop()`
-  <br>
 3. Documentos
     * Inserir - `.nomedacollection.insert(documento)`
     * Consultar - `db.nomedacollection.find({selecao})`
@@ -291,3 +293,18 @@ Veja o exemplo abaixo
     * Limitar - `db.nomedacollection.find().limit(numero)`
     * "Pular" - `db.nomedacollection.find().skip(numero)`
     * Ordernar - `db.nomedacollection.find().sort({<key>:1})`(Considerar crescente e decrescente, e combinações)
+
+## ✒️ Autor
+
+* **Dorian** - [Dorian Vieira](https://github.com/oneyottabyte)
+
+
+## 🎁 Expressões de gratidão
+
+* Obrigado Banco Pan e Gama Project por esse aprendizado!:punch::punch:
+* Obrigado Jenifer, Ana e Jonathan, meus queridos professores! 🤓
+* Conte a outras pessoas sobre este projeto 📢
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/92064386/138007193-47cac947-928e-4909-a299-0ae99b35eed9.png" width="200"/> <img src="https://user-images.githubusercontent.com/92064386/138007156-3ae6e393-a770-4bf7-85cb-9f9d390fb118.png" width="350"/>
+ </p>
