@@ -147,7 +147,9 @@ No menu do 3T isso fica mais simples. É preciso apenas inserir um documento com
 <br>
 Apos isso no robo 3T nosso BD fica assim:
 <br> 
+
 ![image](https://user-images.githubusercontent.com/59287246/140561500-d665846d-9b10-4843-abce-3e6187c0cbc3.png)
+
 <br> 
 
 ## Atualizando alguns documentos
@@ -193,11 +195,17 @@ db.getCollection('Vendas').update(
 );
 ```
 <br> 
+
 ![image](https://user-images.githubusercontent.com/59287246/140564626-0a6f9772-bff5-48e6-851a-2b919e29d871.png)
+
 <br> 
+
 Utilizando esse modelo acima atualizei os documentos com o campo valor. 
+
 <br> 
+
 ![image](https://user-images.githubusercontent.com/59287246/140562402-32560039-8d86-4b46-ae59-4abde257933c.png)
+
 <br> 
 ## Excluido documentos
 Para excluir um documento pelo Robo 3T basta clicar em cima dele com o botão direito e escolher a opção Delete Document.<br>
@@ -207,12 +215,16 @@ Exemplo:<br>
 `db.getCollection('Vendas').remove({ "_id" : ObjectId("617d9e81d1bb62c8d7698765") });`
 <br>
 Essa query acima remove pelo id todo o objeto como mostra a imagem abaixo.
+
 ![image](https://user-images.githubusercontent.com/59287246/140564804-18c95346-1ed4-4025-b3cb-952f24122334.png)
+
 <br>
 Se for preciso deletar apenas um único registro nessa condição podemos fazer essa remoção dessa forma:
 `db.Vendas.remove({"valor": 100},{justOne: true})`
 <br>
+
 ![image](https://user-images.githubusercontent.com/59287246/140567737-346e803d-2863-4191-b74c-9b72088e3175.png)
+
 <br>
 ## Consulta com projeção
 Caso eu queira buscar todos os documentos, porém a única informação que quero que
@@ -224,14 +236,18 @@ resultado, porém utilizamos o número 0informando que não queremos que apareç
 resultado da busca. Então na nossa listagem somente virá retornando o atributo pizza
 das consultas.
 <br>
+
 ![image](https://user-images.githubusercontent.com/59287246/140568398-28881dd4-0826-4349-aa73-8b6ee425aee8.png)
+
 <br>
 ## Consulta utilizando combinação entre os seletores
 Se eu quiser saber quantas vezes certo cliente da pizzaria Bells pediu um sabor de pizza posso utilizar a seguinte query: <br>
 `db.getCollection('Vendas').find({$and:[{"cliente.nome":/.*Dorian.*/ },{"pedido.pizza":/.*Calabresa.*/}]})`
 O comando acima retorna quantas vezes o cliente Dorian comeu Pizza de calabresa, que no caso foi só uma.
 <br>
+
 ![image](https://user-images.githubusercontent.com/59287246/140571265-05f14c97-1ad9-46db-896a-29f995e86687.png)
+
 <br>
 
 ## Consulta paginada e ordenada (utilizando ignorar , limitar e classificar )
@@ -241,8 +257,11 @@ Para classificar usamos: `.sort()` <br>
 <br>
 Veja o exemplo abaixo
 `db.getCollection('Vendas').find({}).limit(3).skip(1).sort({"valor": 1})`
+
 <br>
+
 ![image](https://user-images.githubusercontent.com/59287246/140572680-cc765d8c-5538-487e-817a-a2e6f806cd0b.png)
+
 <br><br>
 # Resumo de comandos básicos Mongo
 1. Base de Dados
