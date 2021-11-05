@@ -22,9 +22,11 @@ Para criar o BD, usa os comandos: <br>
 
 
 ## Inserindo documentos no Banco de dados
-Para inserir documentos utilizamos a query: `$ db.getCollection("Vendas").insert()`.<br>
+Para inserir documentos utilizamos a query: `db.getCollection("Vendas").insert()`.<br>
+![image](https://user-images.githubusercontent.com/59287246/140563878-13bfe198-cc30-47be-8835-460607f5f388.png)
 
-No robo 3T isso fica mais simples. É preciso apenas inserir um documento como segue os exemplos abaixos.
+No menu do 3T isso fica mais simples. É preciso apenas inserir um documento como segue os exemplos abaixos.
+
 ```
 {
     "_id" : ObjectId("617d9e81d1bb62c8d7637269"),
@@ -161,6 +163,38 @@ db.getCollection('Vendas').update(
     }
 );
 ```
-Utilizando esse modelo acima atuali\zei os documentos com o campo valor. 
+```
+db.getCollection('Vendas').update(
+    // query 
+    {
+        "_id" : ObjectId("617d9e81d1bb62c8d7698765")
+    },
+    
+    // update 
+    { $set:
+        {
+        "valor": 112.6
+        }
+        
+    },
+    
+    // options 
+    {
+        "multi" : false,  // update only one document 
+        "upsert" : false  // insert a new document, if no existing document match the query 
+    }
+);
+```
+![image](https://user-images.githubusercontent.com/59287246/140564626-0a6f9772-bff5-48e6-851a-2b919e29d871.png)
+
+Utilizando esse modelo acima atualizei os documentos com o campo valor. 
 
 ![image](https://user-images.githubusercontent.com/59287246/140562402-32560039-8d86-4b46-ae59-4abde257933c.png)
+
+## Excluido documentos
+A query para excluir documentos é:
+`db.getCollection('Vendas').remove({ "_id" : ObjectId("617d9e81d1bb62c8d7698765") });`
+<br>
+Essa query acima remove pelo id todo o objeto como mostra a imagem abaixo
+![image](https://user-images.githubusercontent.com/59287246/140564804-18c95346-1ed4-4025-b3cb-952f24122334.png)
+
