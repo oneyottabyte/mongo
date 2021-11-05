@@ -137,3 +137,30 @@ No robo 3T isso fica mais simples. É preciso apenas inserir um documento como s
 ```
 <br>
 Apos isso no robo 3T nosso BD fica assim:
+
+![image](https://user-images.githubusercontent.com/59287246/140561500-d665846d-9b10-4843-abce-3e6187c0cbc3.png)
+
+
+## Atualizando alguns documentos
+Para fazer o Update dos documentos utilizamos a query abaixo:
+```
+db.getCollection('Vendas').update(
+    // query 
+    {
+        "key" : "value"
+    },
+    
+    // update 
+    {
+    },
+    
+    // options 
+    {
+        "multi" : false,  // update only one document 
+        "upsert" : false  // insert a new document, if no existing document match the query 
+    }
+);
+```
+Utilizando esse modelo acima atuali\zei os documentos com o campo valor. 
+
+![image](https://user-images.githubusercontent.com/59287246/140562402-32560039-8d86-4b46-ae59-4abde257933c.png)
