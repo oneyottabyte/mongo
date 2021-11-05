@@ -1,0 +1,1 @@
+db.getCollection('Vendas').find({$and:[{"cliente.nome":/.*Dorian.*/ },{"pedido.pizza":/.*Calabresa.*/}]})

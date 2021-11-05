@@ -1,0 +1,1 @@
+db.getCollection('Vendas').find({},{"pedido.pizza":1, "_id":0})
